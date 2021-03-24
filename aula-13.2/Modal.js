@@ -8,7 +8,7 @@ function Modal({modal, setModal}) {
                 <button onClick={() => setModal(false)}>Fechar</button>
                 
             </div>
-        )        
+        )   
     } return null
 }
 

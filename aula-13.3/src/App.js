@@ -6,11 +6,12 @@ const App = () => {
   const [loading, setLoading] = React.useState(null)
 
   async function handleClick(event) {
-    setLoading(true)
-    const response = await fetch(
+	// async utiliza no lugar do .then()
+    setLoading(true) 
+    const response = await fetch( // 
       `https://ranekapi.origamid.dev/json/api/produto/${event.target.innerText}`,
-    )
-    const json = await response.json()
+    ) // fetch usa pra colocar a api como se fosse dados dos produtos
+    const json = await response.json() // transformando em json
     setDados(json)
     setLoading(false)
   }
@@ -21,8 +22,8 @@ const App = () => {
       <button style={{margin:'5rem'}} onClick={handleClick}>Smartphone</button>
       <button style={{margin:'5rem'}} onClick={handleClick}>Tablet</button>
       
-      {loading && <p>Carregando...</p>}
-      {!loading && dados && <Produto dados={dados}/>}
+      {loading && <p>Carregando...</p>} // se loading existir coloca o <p>
+      {!loading && dados && <Produto dados={dados}/>} // se o loading for false coloca os dados
     </div>
 
 

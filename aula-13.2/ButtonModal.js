@@ -6,7 +6,8 @@ const ButtonModal = ({setModal}) => {
       }
     return (
         <button onClick={handleClick}>Abrir</button>
-    )
+    )    
+   
 }
 
 export default ButtonModal
